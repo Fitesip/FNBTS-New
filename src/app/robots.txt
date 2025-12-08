@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /forum/
+Disallow: /news/
+Disallow: /messenger/
+
+Sitemap: https://fnbts.ru/sitemap.xml
