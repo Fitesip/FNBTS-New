@@ -1,0 +1,257 @@
+@import 'tailwindcss';
+@custom-variant light (&:where(.light, .light *));
+@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --width-100: 100rem;
+  --spacing: 0.25rem;
+  --width-128: calc(var(--spacing) * 128);  /* 32rem = 512px */
+  --width-160: calc(var(--spacing) * 160);  /* 40rem = 640px */
+  --width-192: calc(var(--spacing) * 192);  /* 48rem = 768px */
+  --width-256: calc(var(--spacing) * 256);  /* 64rem = 1024px */
+  --width-320: calc(var(--spacing) * 320);  /* 80rem = 1280px */
+  --width-384: calc(var(--spacing) * 384);  /* 96rem = 1536px */
+  --width-416: calc(var(--spacing) * 416);  /* 104rem = 1664px */
+  --width-448: calc(var(--spacing) * 448);  /* 112rem = 1792px */
+  --width-512: calc(var(--spacing) * 512);  /* 128rem = 2048px */
+  --rounded-max: 100px;
+}
+
+.light {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cwhite-1: #f4f4f4;
+  --color-cgray-1: #222222;
+  --bg-1: rgba(180, 180, 180, 0.1);
+  --bg-2: rgba(0, 0, 0, 0.3);
+  --color-cgray-2: rgba(160, 160, 160, 0.05);
+  --color-red-1: rgb(221, 209, 50);
+  --color-green-1: rgb(221, 209, 50);
+  --color-cyan-1: rgb(221, 209, 50);
+  --color-purple-1: rgb(221, 209, 50);
+  --color-pink-1: rgb(221, 209, 50);
+  --color-yellow-1: rgb(221, 209, 50);
+  --pink-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.4) 15%, rgba(221, 209, 50, 0.4) 60%, rgba(252, 243, 144, 0.4) 80%);
+  --purple-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.8) 15%, rgba(221, 209, 50, 0.8) 60%, rgba(252, 243, 144, 0.8) 80%);
+  --red-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 1) 15%, rgba(221, 209, 50, 1) 60%, rgba(252, 243, 144, 1) 80%);
+  --cyan-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.6) 15%, rgba(221, 209, 50, 0.6) 60%, rgba(252, 243, 144, 0.6) 80%);
+  --yellow-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.3) 15%, rgba(221, 209, 50, 0.3) 60%, rgba(252, 243, 144, 0.3) 80%);
+  --bg-gradient: radial-gradient(circle at 70% 0%, rgba(30,30,30,1) 0%, rgba(11,11,11,1) 100%);
+}
+
+.dark {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cwhite-1: #f4f4f4;
+  --color-cgray-1: #333333;
+  --bg-1: rgba(244, 244, 244, 0.1);
+  --bg-2: rgba(0, 0, 0, 0.1);
+  --color-cgray-2: rgba(240, 240, 240, 0.05);
+  --color-red-1: rgba(201,41,41,1);
+  --color-green-1: rgb(57, 212, 60);
+  --color-cyan-1: rgba(32,192,192,1);
+  --color-purple-1: rgba(155,57,212,1);
+  --color-pink-1: rgba(223,102,210,1);
+  --color-yellow-1: rgb(221, 209, 50);
+  --pink-gradient: radial-gradient(circle at 10% 85%, rgba(175,40,160,0.4) 15%, rgba(223,102,210,0.4) 60%, rgba(245,166,236,0.4) 80%);
+  --purple-gradient: radial-gradient(circle at 10% 85%, rgba(114,16,172,0.8) 15%, rgba(155,57,212,0.8) 60%, rgba(196,129,236,0.8) 80%);
+  --red-gradient: radial-gradient(circle at 10% 85%, rgba(140,12,12,1) 15%, rgba(201,41,41,1) 60%, rgba(233,160,160,1) 80%);
+  --cyan-gradient: radial-gradient(circle at 10% 85%, rgba(0,137,137,0.6) 15%, rgba(32,192,192,0.6) 60%, rgba(148,239,240,0.6) 80%);
+  --yellow-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.3) 15%, rgba(221, 209, 50, 0.3) 60%, rgba(252, 243, 144, 0.3) 80%);
+  --bg-gradient: radial-gradient(circle at 70% 0%, rgba(57,57,57,1) 0%, rgba(22,22,22,1) 100%);
+  .bg-filter {
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(244, 244, 244, 0.1),
+    inset -0.5px -0.5px 0.5px 0.5px rgba(244, 244, 244, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cwhite-1: #f4f4f4;
+  --color-cgray-1: #333333;
+  --bg-1: rgba(244, 244, 244, 0.1);
+  --bg-2: rgba(0, 0, 0, 0.1);
+  --color-cgray-2: rgba(240, 240, 240, 0.05);
+  --color-red-1: rgba(201,41,41,1);
+  --color-green-1: rgb(57, 212, 60);
+  --color-cyan-1: rgba(32,192,192,1);
+  --color-purple-1: rgba(155,57,212,1);
+  --color-pink-1: rgba(223,102,210,1);
+  --color-yellow-1: rgb(221, 209, 50);
+  --pink-gradient: radial-gradient(circle at 10% 85%, rgba(175,40,160,0.4) 15%, rgba(223,102,210,0.4) 60%, rgba(245,166,236,0.4) 80%);
+  --purple-gradient: radial-gradient(circle at 10% 85%, rgba(114,16,172,0.8) 15%, rgba(155,57,212,0.8) 60%, rgba(196,129,236,0.8) 80%);
+  --red-gradient: radial-gradient(circle at 10% 85%, rgba(140,12,12,1) 15%, rgba(201,41,41,1) 60%, rgba(233,160,160,1) 80%);
+  --cyan-gradient: radial-gradient(circle at 10% 85%, rgba(0,137,137,0.6) 15%, rgba(32,192,192,0.6) 60%, rgba(148,239,240,0.6) 80%);
+  --yellow-gradient: radial-gradient(circle at 10% 85%, rgba(130, 122, 30, 0.3) 15%, rgba(221, 209, 50, 0.3) 60%, rgba(252, 243, 144, 0.3) 80%);
+  --bg-gradient: radial-gradient(circle at 70% 0%, rgba(57,57,57,1) 0%, rgba(22,22,22,1) 100%);
+  --animate-loading:  loading 2s infinite ease-in-out;
+}
+
+html {
+  @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))];
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background-color 0.25s, color 0.25s;
+}
+
+
+
+
+@layer utilities {
+  .animate-loading {
+    animation: var(--animate-loading);
+  }
+  .bg-gradient {
+    background: var(--bg-gradient);
+  }
+  .bg-filter {
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(244, 244, 244, 0.1),
+    inset -0.5px -0.5px 0.5px 0.5px rgba(244, 244, 244, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .text-indent-1 {
+    text-indent: 0.2rem;
+  }
+  .text-indent-2 {
+    text-indent: 0.25rem;
+  }
+  .text-indent-3 {
+    text-indent: 0.4rem;
+  }
+  .text-indent-4 {
+    text-indent: 0.8rem;
+  }
+  .text-indent-5 {
+    text-indent: 1rem;
+  }
+  .line-height-1 {
+    line-height: 1rem;
+  }
+  .line-height-2 {
+    line-height: 1.5rem;
+  }
+  .line-height-3 {
+    line-height: 2rem;
+  }
+  .line-height-4 {
+    line-height: 2.5rem;
+  }
+  .line-height-5 {
+    line-height: 3rem;
+  }
+  .rounded-maxx {
+    border-radius: 100px
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  font-family: FNBTS, sans-serif;
+}
+.formatted-text {
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  ul {
+    list-style: circle;
+    margin-left: 1rem;
+    text-indent: 0.3rem;
+  }
+  ol {
+    list-style: decimal;
+    margin-left: 2rem;
+    text-indent: -0.7rem;
+  }
+  .post-quote {
+    font-style: italic;
+    margin: 0.2rem 0 0.2rem 0;
+    padding: 0.5rem;
+    background: rgba(240, 240, 240, 0.05);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(240, 240, 240, 0.05);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(244, 244, 244, 0.1),
+    inset -0.5px -0.5px 0.5px 0.5px rgba(244, 244, 244, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+.inline-code {
+  padding: 0.5rem;
+  background: rgba(240, 240, 240, 0.05);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(240, 240, 240, 0.05);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(244, 244, 244, 0.1),
+  inset -0.5px -0.5px 0.5px 0.5px rgba(244, 244, 244, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.code-block {
+  padding: 0.5rem;
+  background: rgba(240, 240, 240, 0.05);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(240, 240, 240, 0.05);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0.5px 0.5px 0.5px 0 rgba(244, 244, 244, 0.1),
+  inset -0.5px -0.5px 0.5px 0.5px rgba(244, 244, 244, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.circle {
+  position: absolute;
+  border-radius: 100%;
+  animation: circles ease-in-out infinite;
+}
+.pink {
+  background: var(--pink-gradient);
+  animation-duration: 10s;
+}
+.purple {
+  background: var(--purple-gradient);
+  animation-duration: 20s;
+}
+.red {
+  background: var(--red-gradient);
+  animation-duration: 25s;
+}
+.cyan {
+  background: var(--cyan-gradient);
+  animation-duration: 15s;
+}
+.yellow {
+  background: var(--yellow-gradient);
+  animation-duration: 5s;
+}
+@keyframes circles {
+  0% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(10px, -25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
