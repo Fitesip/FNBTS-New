@@ -10,6 +10,9 @@ import type { Frame } from "@/types/shop"
 import { frames } from "@/constants/frames"
 import {RARITY_ORDER} from "@/constants";
 import Image from "next/image";
+import UserBanner from "@/components/UserBanner";
+import UploadBannerForm from "@/components/UploadBannerForm";
+import UploadPhotoForm from "@/components/UploadPhotoForm";
 
 export default function PersonalizationPage() {
     const { user } = useAuth();
@@ -170,7 +173,7 @@ export default function PersonalizationPage() {
     }
 
     return (
-        <div className={`max-w-6xl p-4 lg:p-6 mt-5 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter z-10 mb-5 mx-4 lg:mx-auto text-cwhite-1`}>
+        <div className={`max-w-344 p-4 lg:p-6 mt-5 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter z-10 mb-5 mx-4 lg:mx-auto text-cwhite-1`}>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                 <div>
                     <Link
@@ -182,8 +185,8 @@ export default function PersonalizationPage() {
                         </svg>
                         Назад к профилю
                     </Link>
-                    <h1 className={`text-xl lg:text-3xl font-bold mb-2`}>Мои рамки</h1>
-                    <p className="text-gray-400 text-sm lg:text-base">Выберите рамку для вашего аватара</p>
+                    <h1 className={`text-xl lg:text-3xl font-bold mb-2`}>Персонализация</h1>
+                    <p className="text-gray-400 text-sm lg:text-base">Выберите рамку для вашего аватара, измените аватар или баннер</p>
                 </div>
                 <Link
                     href={`/user/${user.id}/shop`}
@@ -195,23 +198,64 @@ export default function PersonalizationPage() {
 
             {/* Предпросмотр текущего аватара */}
             <div className="p-4 lg:p-6 mt-5 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter">
-                <h2 className="text-lg lg:text-xl font-semibold mb-4 text-cwhite-1">Предпросмотр</h2>
-                <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-8">
-                    <div className="relative size-27 lg:size-39">
-                        <UserPhoto
-                            userId={user?.id}
-                            className={`size-20 lg:size-30`}
-                        />
-                        <UserFrame
-                            userId={user.id}
-                            className={`size-26 lg:size-39 absolute z-10 top-0 -mt-3 -ml-3 lg:-ml-4.5 lg:-mt-4.5`}
-                        />
+                <div className="space-y-4 lg:space-y-6">
+                    {/* Баннер */}
+                    <div className="space-y-3 lg:space-y-4">
+                        <h3 className="text-base lg:text-lg font-semibold">Баннер профиля</h3>
+                        <div className="relative w-full h-40 lg:w-7xl lg:h-80 rounded-lg bg-cgray-2 overflow-hidden">
+                            <UserBanner
+                                userId={user.id}
+                                width={1280}
+                                height={320}
+                                alt={'banner'}
+                                className="w-full h-full object-cover rounded-lg"
+                            />
+
+                            <div className="absolute top-0 h-full w-full">
+                                <UploadBannerForm
+                                    userId={user.id.toString()}
+                                    onPhotoUploaded={() => {}}
+                                />
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div className="text-center sm:text-left">
-                        <p className="text-gray-400 text-sm lg:text-base">
-                            Ваш текущий аватар с выбранной рамкой
-                        </p>
+                    {/* Аватар */}
+                    <div className="space-y-3 lg:space-y-4">
+                        <h3 className="text-base lg:text-lg font-semibold">Аватар профиля</h3>
+                        <div className="flex flex-col items-center gap-4 lg:gap-6 p-3 lg:p-4 bg-cgray-1 rounded-lg transition-all duration-300 hover:shadow-lg">
+                            <div className="relative shrink-0">
+                                <div className="relative z-10">
+                                    <UserPhoto
+                                        userId={user.id}
+                                        width={120}
+                                        height={120}
+                                        alt={'avatar'}
+                                        className="rounded-full size-30 lg:size-40"
+                                    />
+                                    <div className="absolute top-0 size-38 lg:size-38 -ml-4 -mt-4 lg:mt-1">
+                                        <UserFrame
+                                            userId={user.id}
+                                            width={200}
+                                            alt={'frame'}
+                                            className=""
+                                        />
+                                    </div>
+                                </div>
+                                <div className="absolute top-5 lg:top-5 z-100 left-20 lg:left-25">
+                                    <UploadPhotoForm
+                                        userId={user.id.toString()}
+                                        onPhotoUploaded={() => {}}
+                                    />
+                                </div>
+                            </div>
+                            <div className="text-center lg:text-left w-full">
+                                <p className="text-xs lg:text-sm text-cwhite-1/70">
+                                    Поддерживаются JPG, PNG, WEBP. Максимальный размер: 5MB. Рекомендуемое разрешение: 200x200.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

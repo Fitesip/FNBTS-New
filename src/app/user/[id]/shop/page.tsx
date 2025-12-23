@@ -353,20 +353,20 @@ export default function FrameShopPage() {
                             </div>}
 
                             {activeTab === 'currency' && <div className={`flex items-center gap-1`}>
-                                <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                                 </svg>
                                 Паки
                             </div>}
 
                             {activeTab === 'points' && <div className={`flex items-center gap-1`}>
-                                <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 Поинты
                             </div>}
                             {activeTab === 'history' && <div className={`flex items-center gap-1`}>
-                                <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                                 </svg>
                                 История транзакций
@@ -396,7 +396,7 @@ export default function FrameShopPage() {
                                 <div className={'flex gap-1 items-center'}
                                     onClick={() => setActiveTab('currency')}
                                 >
-                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                                     </svg>
                                     Паки
@@ -404,7 +404,7 @@ export default function FrameShopPage() {
                                 <div className={'flex gap-1 items-center'}
                                     onClick={() => setActiveTab('points')}
                                 >
-                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     Поинты
@@ -412,7 +412,7 @@ export default function FrameShopPage() {
                                 <div className={'flex gap-1 items-center'}
                                     onClick={() => setActiveTab('history')}
                                 >
-                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                                     </svg>
                                     История транзакций
@@ -443,7 +443,7 @@ export default function FrameShopPage() {
                         }`}
                         onClick={() => setActiveTab('currency')}
                     >
-                        <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                         </svg>
                         Паки
@@ -456,7 +456,7 @@ export default function FrameShopPage() {
                         }`}
                         onClick={() => setActiveTab('points')}
                     >
-                        <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         Поинты
@@ -469,7 +469,7 @@ export default function FrameShopPage() {
                         }`}
                         onClick={() => setActiveTab('history')}
                     >
-                        <svg className="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 lg:w-5 lg:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                         История транзакций
@@ -522,15 +522,28 @@ export default function FrameShopPage() {
                                             `}>
                                                 {frame.rarity}
                                             </span>
-                                            <div className="flex items-center gap-1 mt-1">
-                                                <span className={`text-sm font-bold ${
+                                            <div className="flex items-center gap-1 mt-1 relative">
+                                                <span className={`text-sm font-bold flex gap-1 ${
                                                     frame.rarity.startsWith('Обычная') ? "text-gray-400" :
                                                         frame.rarity.startsWith('Необычная') ? "text-cyan-1" :
                                                             frame.rarity.startsWith('Редкая') ? "text-purple-1" :
                                                                 frame.rarity.startsWith('Эпическая') ? "text-pink-1" :
                                                                     frame.rarity.startsWith('Легендарная') ? "text-red-1" : "text-gray-400"
-                                                }`}>{frame.pointsRequired}</span>
-                                                <span className="text-gray-400 text-xs">поинтов</span>
+                                                }`}>{frame.sale && (
+                                                    <span className={`text-xs align-text-top`}>
+                                                                                <s>{frame.oldPrice}</s>
+                                                                            </span>)}
+                                                    {frame.pointsRequired}</span>
+                                                <span className="text-gray-400 text-sm">поинтов {frame.sale && frame.oldPrice && (
+                                                    <span className={`absolute -top-2 -right-3 text-xs lg:-right-7
+                                                    ${
+                                                        frame.rarity.startsWith('Обычная') ? "text-gray-400" :
+                                                            frame.rarity.startsWith('Необычная') ? "text-cyan-1" :
+                                                                frame.rarity.startsWith('Редкая') ? "text-purple-1" :
+                                                                    frame.rarity.startsWith('Эпическая') ? "text-pink-1" :
+                                                                        frame.rarity.startsWith('Легендарная') ? "text-red-1" : "text-gray-400"
+                                                    }`}>-{Math.floor(((frame.oldPrice - frame.pointsRequired) / frame.oldPrice) * 100)}%</span>
+                                                )}</span>
                                             </div>
 
                                             {canPurchase && (
@@ -640,20 +653,20 @@ export default function FrameShopPage() {
                                                 canPurchase ? 'cursor-pointer hover:scale-105 hover:border-red-1' : 'cursor-not-allowed opacity-70'
                                             } ${
                                                 currencyPackage.popular
-                                                    ? 'border-yellow-500 bg-gradient-to-br from-cgray-1 to-yellow-400/10'
+                                                    ? 'border-yellow-500 bg-linear-to-br from-cgray-1 to-yellow-400/10'
                                                     : 'border-cgray-1'
                                             } ${currencyPackage.author == 'timofeiko256'
-                                                ? "bg-gradient-to-br from-cgray-1 to-purple-1/20 border-purple-1"
+                                                ? "bg-linear-to-br from-cgray-1 to-purple-1/20 border-purple-1"
                                                 : currencyPackage.author == 'Fitesip'
-                                                    ? "bg-gradient-to-br from-cgray-1 to-red-1/20 border-red-1"
+                                                    ? "bg-linear-to-br from-cgray-1 to-red-1/20 border-red-1"
                                                     : currencyPackage.author == 'sanektigr5'
-                                                        ? "bg-gradient-to-br from-cgray-1 to-cyan-1/20 border-cyan-1"
+                                                        ? "bg-linear-to-br from-cgray-1 to-cyan-1/20 border-cyan-1"
                                                         : currencyPackage.author == 'nikulyamp3'
-                                                            ? "bg-gradient-to-br from-cgray-1 to-pink-1/20 border-pink-1"
+                                                            ? "bg-linear-to-br from-cgray-1 to-pink-1/20 border-pink-1"
                                                                 : currencyPackage.author == 'Booler'
-                                                                ? "bg-gradient-to-br from-cgray-1 to-yellow-1/20 border-yellow-1"
+                                                                ? "bg-linear-to-br from-cgray-1 to-yellow-1/20 border-yellow-1"
                                                                     : currencyPackage.author
-                                                                        ? "bg-gradient-to-br from-cgray-1 to-yellow-1/20 border-yellow-500"
+                                                                        ? "bg-linear-to-br from-cgray-1 to-yellow-1/20 border-yellow-500"
                                                                         : ""}`}
                                         >
                                             {currencyPackage.popular && (
@@ -691,7 +704,7 @@ export default function FrameShopPage() {
                                                     </p>
                                                 </div>
 
-                                                <div className="flex-grow mb-4">
+                                                <div className="grow mb-4">
                                                     <div className="space-y-2">
                                                         {currencyPackage.hleb > 0 && (
                                                             <div className="flex justify-between items-center">
@@ -718,7 +731,7 @@ export default function FrameShopPage() {
                                                                             <img
                                                                                 src={frame.url}
                                                                                 alt={frame.name}
-                                                                                className="size-12 lg:size-16 object-contain flex-shrink-0"
+                                                                                className="size-12 lg:size-16 object-contain shrink-0"
                                                                             />
                                                                             <div className="min-w-0 flex-1 text-right">
                                                                                 <div className="text-cwhite-1 font-medium text-sm truncate">
@@ -744,9 +757,9 @@ export default function FrameShopPage() {
                                                     </div>
                                                 </div>
 
-                                                <div className="text-center">
-                                                    <div className="flex items-center justify-center gap-2 mb-3">
-                                                <span className={`text-xl font-bold 
+                                                <div className="text-center flex flex-col items-center">
+                                                    <div className="flex items-center justify-center gap-2 mb-3 relative w-max">
+                                                <span className={`text-xl font-bold flex gap-1
                                                 ${currencyPackage.author == 'timofeiko256'
                                                     ? "text-purple-1"
                                                     : currencyPackage.author == 'Fitesip'
@@ -759,8 +772,28 @@ export default function FrameShopPage() {
                                                                     ? "text-yellow-1" 
                                                                     : currencyPackage.author || currencyPackage.popular
                                                                         ? "text-yellow-500"
-                                                                        : "text-red-1"}`}>{currencyPackage.pointsCost}</span>
-                                                        <span className="text-gray-400 text-sm">поинтов</span>
+                                                                        : "text-red-1"}`}>{currencyPackage.sale && (
+                                                                            <span className={`text-xs align-text-top`}>
+                                                                                <s>{currencyPackage.oldPrice}</s>
+                                                                            </span>)}
+                                                    {currencyPackage.pointsCost}</span>
+                                                        <span className="text-gray-400 text-sm">поинтов {currencyPackage.sale && currencyPackage.oldPrice && (
+                                                            <span className={`absolute -top-1 -right-3 text-xs lg:-right-7
+                                                            ${currencyPackage.author == 'timofeiko256'
+                                                                ? "text-purple-1"
+                                                                : currencyPackage.author == 'Fitesip'
+                                                                    ? "text-red-1"
+                                                                    : currencyPackage.author == 'sanektigr5'
+                                                                        ? "text-cyan-1"
+                                                                        : currencyPackage.author == 'nikulyamp3'
+                                                                            ? "text-pink-1"
+                                                                            : currencyPackage.author == 'Booler'
+                                                                                ? "text-yellow-1"
+                                                                                : currencyPackage.author || currencyPackage.popular
+                                                                                    ? "text-yellow-500"
+                                                                                    : "text-red-1"}`}>
+                                                                -{Math.floor(((currencyPackage.oldPrice - currencyPackage.pointsCost) / currencyPackage.oldPrice) * 100)}%</span>
+                                                        )}</span>
                                                     </div>
 
                                                     {canPurchase ? (
@@ -822,7 +855,7 @@ export default function FrameShopPage() {
                                             </p>
                                         </div>
 
-                                        <div className="flex-grow mb-4">
+                                        <div className="grow mb-4">
                                             <div className="space-y-2">
                                                 {points.pointsAmount > 0 && (
                                                     <div className="flex justify-between items-center">
@@ -833,9 +866,16 @@ export default function FrameShopPage() {
                                             </div>
                                         </div>
 
-                                        <div className="text-center">
-                                            <div className="flex items-center justify-center gap-2 mb-3">
-                                                <span className="text-red-1 text-xl font-bold">{points.cost}</span>
+                                        <div className="text-center flex flex-col items-center">
+                                            <div className="flex items-center justify-center gap-2 mb-3 relative w-max">
+                                                <span className="text-red-1 text-xl font-bold flex gap-1">{points.sale && (
+                                                    <span className={`text-xs align-text-top`}>
+                                                                                <s>{points.oldPrice}</s>
+                                                                            </span>)}
+                                                    {points.cost}</span>
+                                                <span className="text-gray-400 text-sm">поинтов {points.sale && points.oldPrice && (
+                                                    <span className={`absolute -top-2 -right-3 text-xs lg:-right-7`}>-{Math.floor(((points.oldPrice - points.cost) / points.oldPrice) * 100)}%</span>
+                                                )}</span>
                                                 <span className="text-gray-400 text-sm">рублей</span>
                                             </div>
                                             <button className="w-full bg-red-1 text-cwhite-1 py-2 rounded-lg font-medium hover:bg-red-1/80 transition-colors">

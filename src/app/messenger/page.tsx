@@ -216,7 +216,7 @@ const MessagesList = memo(({
 
                                 {/* Текст сообщения */}
                                 {message.message_text && (
-                                    <p className="text-xs lg:text-sm break-words">{message.message_text}</p>
+                                    <p className="text-xs lg:text-sm wrap-break-word">{message.message_text}</p>
                                 )}
 
                                 <div className={`text-xs flex gap-2 items-center justify-end`}>

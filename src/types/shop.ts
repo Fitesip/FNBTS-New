@@ -7,6 +7,8 @@ export interface Frame {
     pointsRequired: number;
     isDefault: boolean;
     author?: string;
+    sale?: boolean;
+    oldPrice?: number;
 }
 
 export interface CurrencyPackage {
@@ -19,6 +21,8 @@ export interface CurrencyPackage {
     popular?: boolean;
     author?: string;
     frameId?: number;
+    sale?: boolean;
+    oldPrice?: number;
 }
 
 export interface Points {
@@ -27,6 +31,8 @@ export interface Points {
     description: string;
     pointsAmount: number;
     cost: number;
+    sale?: boolean;
+    oldPrice?: number;
 }
 
 export interface Codes {

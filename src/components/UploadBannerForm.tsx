@@ -641,7 +641,7 @@ export default function UploadBannerForm({ userId, onPhotoUploaded }: UploadBann
             <div
                 className={`fixed transition-all duration-300 z-50 ${
                     !isChanging
-                        ? `w-94 lg:w-320 h-40 lg:h-80 hover:bg-cgray-1/70 hover:opacity-100 flex items-center justify-center text-center rounded-lg opacity-0`
+                        ? `w-94 lg:w-7xl h-40 lg:h-80 hover:bg-cgray-1/70 hover:opacity-100 flex items-center justify-center text-center rounded-lg opacity-0`
                         : `w-11/12 lg:w-99 max-w-95vw lg:max-w-none max-h-64 p-3 lg:p-4 bg-cgray-1 border rounded-lg text-cwhite-1 opacity-100 lg:translate-x-170 lg:translate-y-30 overflow-hidden left-1/2 lg:left-auto transform -translate-x-1/2 top-1/2 lg:top-auto -translate-y-1/2`
                 } flex`}
                 onClick={() => !isChanging && handleToggleChanging()}
@@ -668,7 +668,7 @@ export default function UploadBannerForm({ userId, onPhotoUploaded }: UploadBann
                                 e.stopPropagation();
                                 handleToggleChanging();
                             }}
-                            className="text-red-1 hover:text-red-2/50 transition-all text-lg lg:text-xl flex-shrink-0 ml-2"
+                            className="text-red-1 hover:text-red-2/50 transition-all text-lg lg:text-xl shrink-0 ml-2"
                         >
                             ✕
                         </button>
@@ -716,7 +716,7 @@ export default function UploadBannerForm({ userId, onPhotoUploaded }: UploadBann
                             </h3>
                             <button
                                 onClick={handleCancelCrop}
-                                className="text-red-1 hover:text-red-2/50 text-lg sm:text-xl lg:text-2xl flex-shrink-0 ml-2"
+                                className="text-red-1 hover:text-red-2/50 text-lg sm:text-xl lg:text-2xl shrink-0 ml-2"
                             >
                                 ✕
                             </button>

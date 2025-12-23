@@ -60,7 +60,7 @@ export default function Carousel({ images, autoPlayInterval = 5000 }: CarouselPr
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {images.map((image, index) => (
-                        <div key={index} className="w-full flex-shrink-0">
+                        <div key={index} className="w-full shrink-0">
                             <Image
                                 src={image.src}
                                 alt={image.alt}

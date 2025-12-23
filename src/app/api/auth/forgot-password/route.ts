@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/database';
 import crypto from 'crypto';
 import { Resend } from 'resend';
+import fs from "node:fs";
 
 // Типы для базы данных
 interface User {
@@ -84,11 +85,21 @@ async function sendPasswordResetEmail(email: string, username: string, resetLink
     try {
         const resend = new Resend(process.env.RESEND_API_KEY);
 
+        const filepath = `public/fnbts.png`;
+        const attachment = fs.readFileSync(filepath).toString('base64');
+
         const { data, error } = await resend.emails.send({
             from: 'ФНБТС <fnbts@fnbts.ru>',
             to: email,
             subject: 'Сброс пароля - ФНБТС',
             html: generateEmailHtml(username, resetLink),
+            attachments: [
+                {
+                    content: attachment,
+                    filename: 'logo.png',
+                    contentId: 'logo-image',
+                },
+            ],
         });
 
         if (error) {
@@ -162,7 +173,7 @@ function generateEmailHtml(username: string, resetLink: string): string {
     <body>
         <div class="container">
             <div class="logo">
-                <img src="/fnts.png" alt="FNTS Logo" width="50" height="50">
+                <img src="cid:logo-image" alt="FNBTS Logo" width="50" height="50"/>
             </div>
             
             <hr class="divider">

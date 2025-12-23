@@ -109,7 +109,7 @@ export default function ResetPasswordPage() {
         );
     }
 
-    if (tokenValid === false) {
+    if (!tokenValid) {
         return (
             <div className="auth-container mt-40 text-cwhite-1 flex z-10">
                 <div className="w-full flex items-center justify-center p-8">
@@ -139,7 +139,7 @@ export default function ResetPasswordPage() {
     return (
         <div className="auth-container mt-40 text-cwhite-1 flex z-10">
             {/* Левая часть - изображение */}
-            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br items-center justify-center p-12">
+            <div className="hidden lg:flex lg:w-1/2 bg-linear-to-br items-center justify-center p-12">
                 <div className="text-white text-center max-w-md">
                     <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

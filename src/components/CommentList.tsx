@@ -180,7 +180,7 @@ export default function CommentList({ author, authorId, postId, status }: Commen
                     <div className="p-3 lg:p-4 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter">
                         <div className="flex items-start gap-2 lg:gap-3 mb-3 flex-col">
                             <div className={`flex items-center gap-2 lg:gap-3 cursor-pointer`} onClick={() => router.push(`/user/${authorId}`)}>
-                                <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 cursor-pointer">
+                                <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0 cursor-pointer">
                                     <UserPhoto
                                         withUsername={false}
                                         username={comment.author}

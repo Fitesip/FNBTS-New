@@ -69,6 +69,7 @@ export default function NewsPage() {
 
             <div className="news-grid mb-5 w-full max-w-300 mx-auto">
                 {news.map(newsItem => (
+
                     <NewsCard key={newsItem.id} news={newsItem} />
                 ))}
             </div>

@@ -151,7 +151,7 @@ export default function PreparePaymentPage() {
                     <h2 className="text-lg lg:text-xl font-semibold mb-4 text-cwhite-1">Детали заказа</h2>
 
                     <div className="space-y-4">
-                        <div className="flex items-center justify-between p-4 bg-gradient-to-br from-cgray-2 to-red-500/10 rounded-lg border-2 border-red-500/30">
+                        <div className="flex items-center justify-between p-4 bg-linear-to-br from-cgray-2 to-red-500/10 rounded-lg border-2 border-red-500/30">
                             <div>
                                 <h3 className="font-semibold text-cwhite-1">{pointsPack.name}</h3>
                                 <p className="text-gray-400 text-sm">{pointsPack.description}</p>
@@ -247,7 +247,7 @@ export default function PreparePaymentPage() {
                         <button
                             onClick={generatePaymentToken}
                             disabled={isLoading}
-                            className="w-full bg-gradient-to-r bg-red-1/50 border hover:bg-red-1/30 border-red-1 text-cwhite-1 p-4 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                            className="w-full bg-linear-to-r bg-red-1/50 border hover:bg-red-1/30 border-red-1 text-cwhite-1 p-4 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                         >
                             {isLoading ? (
                                 <>
