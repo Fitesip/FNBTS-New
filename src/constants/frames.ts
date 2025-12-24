@@ -52,8 +52,10 @@ export const frames: Frame[] = [
         url: '/frames/FNBTS.webp',
         rarity: 'Легендарная',
         roles: [],
-        pointsRequired: 150,
-        isDefault: false
+        pointsRequired: 111,
+        isDefault: false,
+        oldPrice: 150,
+        sale: true,
     },
     {
         id: 7,
@@ -81,9 +83,11 @@ export const frames: Frame[] = [
         url: '/frames/Zimnyaa.webp',
         rarity: 'Редкая',
         roles: [],
-        pointsRequired: 75,
+        pointsRequired: 55,
         isDefault: false,
-        author: 'nikulyamp3'
+        author: 'nikulyamp3',
+        sale: true,
+        oldPrice: 75,
     },
     {
         id: 10,
@@ -204,16 +208,18 @@ export const frames: Frame[] = [
         url: '/frames/Uyut.webp',
         rarity: 'Редкая',
         roles: [],
-        pointsRequired: 35,
+        pointsRequired: 55,
         isDefault: false,
+        sale: true,
+        oldPrice: 75,
     },
     {
         id: 23,
         name: "Танец",
         url: '/frames/Tanec.webp',
-        rarity: 'Необычная',
+        rarity: 'Эпическая',
         roles: [],
-        pointsRequired: 35,
+        pointsRequired: 100,
         isDefault: false,
     },
 ];

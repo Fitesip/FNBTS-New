@@ -128,7 +128,7 @@ export default function CodePage() {
                                         </p>
                                     </div>
 
-                                    <div className="flex-grow mb-4">
+                                    <div className="grow mb-4">
                                         <div className="space-y-2">
                                             {codeData.hleb > 0 && (
                                                 <div className="flex justify-between items-center">

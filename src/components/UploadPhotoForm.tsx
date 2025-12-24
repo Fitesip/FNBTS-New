@@ -816,7 +816,7 @@ export default function UploadPhotoForm({ userId, onPhotoUploaded }: UploadPhoto
                                 e.stopPropagation();
                                 handleToggleChanging();
                             }}
-                            className="text-red-1 hover:text-red-2/50 transition-all text-lg lg:text-xl flex-shrink-0 ml-2"
+                            className="text-red-1 hover:text-red-2/50 transition-all text-lg lg:text-xl shrink-0 ml-2"
                         >
                             ✕
                         </button>
@@ -863,7 +863,7 @@ export default function UploadPhotoForm({ userId, onPhotoUploaded }: UploadPhoto
                             </h3>
                             <button
                                 onClick={handleCancelCrop}
-                                className="text-red-1 hover:text-red-2/50 text-lg sm:text-xl lg:text-2xl flex-shrink-0 ml-2"
+                                className="text-red-1 hover:text-red-2/50 text-lg sm:text-xl lg:text-2xl shrink-0 ml-2"
                             >
                                 ✕
                             </button>

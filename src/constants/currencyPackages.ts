@@ -34,10 +34,12 @@ export const currencyPackages: CurrencyPackage[] = [
         description: "Специальное предложение от timofeiko256",
         hleb: 256000,
         sfl: 256,
-        pointsCost: 256,
+        pointsCost: 189,
         popular: false,
         author: 'timofeiko256',
-        frameId: 19
+        frameId: 19,
+        sale: true,
+        oldPrice: 256,
     },
     {
         id: 8,
@@ -45,10 +47,12 @@ export const currencyPackages: CurrencyPackage[] = [
         description: "Специальное предложение от Fitesip",
         hleb: 100000,
         sfl: 100,
-        pointsCost: 150,
+        pointsCost: 111,
         popular: false,
         author: 'Fitesip',
-        frameId: 16
+        frameId: 16,
+        sale: true,
+        oldPrice: 150,
     },
     {
         id: 9,
@@ -56,9 +60,11 @@ export const currencyPackages: CurrencyPackage[] = [
         description: "Специальное предложение от sanektigr5",
         hleb: 333333 ,
         sfl: 333,
-        pointsCost: 333,
+        pointsCost: 246,
         popular: false,
-        author: 'sanektigr5'
+        author: 'sanektigr5',
+        sale: true,
+        oldPrice: 333,
     },
     {
         id: 10,
@@ -66,9 +72,11 @@ export const currencyPackages: CurrencyPackage[] = [
         description: "Специальное предложение от Booler",
         hleb: 20000 ,
         sfl: 100,
-        pointsCost: 38,
+        pointsCost: 28,
         popular: false,
-        author: 'Booler'
+        author: 'Booler',
+        sale: true,
+        oldPrice: 38,
     },
     {
         id: 4,

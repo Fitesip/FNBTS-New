@@ -8,18 +8,27 @@ import UserPhoto from "@/components/UserPhoto";
 import FormattedText from '@/components/FormattedText';
 import { formatText } from '@/utils/textFormatter';
 import Image from "next/image";
+import {useAuth} from "@/context/AuthContext";
 
 interface NewsCardProps {
     news: News;
 }
 
 export default function NewsCard({ news }: NewsCardProps) {
+    const { user } = useAuth()
+
     const truncateText = (text: string, maxLength: number = 150) => {
         if (text.length <= maxLength) return text;
         return text.substring(0, maxLength) + '...';
     };
 
     const formattedExcerpt = formatText(truncateText(news.text));
+
+    if (user?.role !== 'Гл. Администратор') {
+        if (news.status == 'deleted') {
+            return null
+        }
+    }
 
     return (
         <Link
@@ -31,6 +40,7 @@ export default function NewsCard({ news }: NewsCardProps) {
                     <h3 className="news-title text-lg font-bold group-hover:text-cyan-1/70 transition-colors duration-300 line-clamp-2 flex-1">
                         {news.title}
                     </h3>
+                    {user?.role === 'Гл. Администратор' ? (<p className={`p-2 border text-sm rounded-lg ${news.status == 'open' ? "bg-green-1/20 border-green-1" : "border-red-1 bg-red-1/20"}`}>{news.status == 'open' ? 'Открыт' : 'Удалён'}</p>) : null}
                     {news.tag == "Новость" ? (
                         <div className="news-badge-full bg-cyan-1/20 border border-cyan-1 text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold inline-block mb-3 lg:mb-4">
                             Новость

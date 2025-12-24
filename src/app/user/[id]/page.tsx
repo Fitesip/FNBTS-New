@@ -199,7 +199,7 @@ export default function UserPage({params}: UserPageProps) {
                                                     {currentUser.username}
                                                     {currentUser.isBlocked ? (<span className={'text-red-1'}>Заблокирован!</span>) : null}
                                                 </h1>
-                                                {currentUser.verify && (
+                                                {currentUser.verify ? (
                                                     <Image
                                                         width={20}
                                                         height={20}
@@ -207,7 +207,7 @@ export default function UserPage({params}: UserPageProps) {
                                                         alt="verify"
                                                         className="w-5 h-5 lg:w-6 lg:h-6"
                                                     />
-                                                )}
+                                                ): null}
                                             </div>
 
                                             {/* Статус */}

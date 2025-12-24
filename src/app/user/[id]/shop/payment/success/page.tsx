@@ -199,7 +199,7 @@ export default function SuccessPage() {
 
                         {/* Карточка купленного набора */}
                         <div className="max-w-md mx-auto mb-8">
-                            <div className="bg-gradient-to-br from-cgray-2 to-green-500/10 rounded-lg p-6 border-2 border-green-500/30">
+                            <div className="bg-linear-to-br from-cgray-2 to-green-500/10 rounded-lg p-6 border-2 border-green-500/30">
                                 <div className="flex items-center justify-between mb-4">
                                     <h3 className="text-lg font-semibold text-cwhite-1">{pointsPack.name}</h3>
                                     <div className="flex items-center gap-1 bg-green-500/20 px-3 py-1 rounded-full">

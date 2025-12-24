@@ -10,7 +10,7 @@ import UserPhoto from "@/components/UserPhoto";
 import FormattedText from "@/components/FormattedText";
 import { formatText } from "@/utils/textFormatter";
 import {Metadata, ResolvingMetadata} from 'next';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import {useNewsLikes} from "@/hooks/useNewsLikes";
 
@@ -18,6 +18,8 @@ export default function NewsPage() {
     const params = useParams();
     const { user } = useAuth();
     const newsId = parseInt(params.id as string);
+    const [message, setMessage] = useState<string | null>(null);
+    const [buttonError, setButtonError] = useState<string | null>(null);
 
     const { news, loading, error } = useNewsItem(newsId);
 
@@ -68,6 +70,34 @@ export default function NewsPage() {
         }
     };
 
+    const handleDeletePost = async () => {
+        if (!news || !user) return;
+        try {
+            const response = await fetch(`/api/news/${news.id}/`, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            const data = await response.json();
+            if (data.success) {
+                setMessage(data.message);
+                setTimeout(() => {
+                    setMessage(null);
+                }, 3000)
+            }
+            else {
+                setButtonError(data.error);
+                setTimeout(() => {
+                    setButtonError(null);
+                }, 3000)
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     if (loading || error || !news) {
         return (
             <div className="flex items-center justify-center mt-10 lg:mt-40 px-4">
@@ -97,17 +127,31 @@ export default function NewsPage() {
     return (
         <div className="px-4 py-4 lg:py-8 w-110 lg:w-7xl">
             <article className="w-full max-w-300 p-4 lg:p-6 mt-5 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter z-10 overflow-hidden">
-                <Link
-                    href="/news"
-                    className="back-link inline-flex items-center gap-2 hover:text-cyan-1/70 font-medium transition-colors duration-200 group mb-4 lg:mb-0"
-                >
-                    <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    <span className="hidden sm:inline">Назад к новостям</span>
-                    <span className="sm:hidden">Назад</span>
-                </Link>
-
+                <div className="flex justify-between items-center">
+                    <Link
+                        href="/news"
+                        className="back-link inline-flex items-center gap-2 hover:text-cyan-1/70 font-medium transition-colors duration-200 group mb-4 lg:mb-0"
+                    >
+                        <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        <span className="hidden sm:inline">Назад к новостям</span>
+                        <span className="sm:hidden">Назад</span>
+                    </Link>
+                    <div className="flex gap-4">
+                        {(user?.role === 'Администратор' || user?.role === 'Гл. Администратор' || user?.role === 'Креатор') && news.status !== 'deleted' && (
+                            <button onClick={handleDeletePost} className={`p-2 rounded-lg bg-red-1 hover:bg-red-1/70 hover:scale-95 transition-all`}>
+                                Удалить новость
+                            </button>
+                        )}
+                    </div>
+                </div>
+                {message && (
+                    <p className={`bg-green-1/20 border-green-1 border p-4 rounded-lg mt-3 w-full`}>{message}</p>
+                )}
+                {buttonError && (
+                    <p className={`bg-red-1/20 border-red-1 border p-4 rounded-lg mt-3 w-full`}>{buttonError}</p>
+                )}
                 <header className="news-header-full p-4 lg:p-8 pb-4 lg:pb-6 border-b">
                     {news.tag == "Новость" ? (
                         <div className="news-badge-full bg-cyan-1/20 border border-cyan-1 text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-semibold inline-block mb-3 lg:mb-4">

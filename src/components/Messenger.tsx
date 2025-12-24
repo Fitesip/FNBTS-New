@@ -299,7 +299,7 @@ export default function Messenger() {
                                                                         : 'bg-gray-200 text-gray-800 rounded-bl-none'
                                                                 }`}
                                                             >
-                                                                <p className="text-sm break-words">{message.message_text}</p>
+                                                                <p className="text-sm wrap-break-word">{message.message_text}</p>
                                                                 <p className={`text-xs mt-1 ${
                                                                     message.sender_id === user.id
                                                                         ? 'text-blue-100'

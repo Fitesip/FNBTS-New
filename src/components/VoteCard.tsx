@@ -314,6 +314,20 @@ export default function VoteCard({ vote }: VoteCardProps) {
                     </div>
                 </div>
             )}
+            {totalVotes == 0 && (
+                <div className="mb-4">
+                    {isActive && (
+                    <div className="text-xs text-cwhite-1/60 mt-1 text-center">
+                        Пока нет голосов!
+                    </div>
+                        )}
+                    {!isActive && (
+                        <div className="text-xs text-cwhite-1/60 mt-1 text-center">
+                            Никто не проголосовал :(
+                        </div>
+                    )}
+                </div>
+            )}
             {isLoading && (
                 <div className="text-center py-2">
                     <span className="text-cwhite-1 text-sm">

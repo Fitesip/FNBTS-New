@@ -244,7 +244,7 @@ export default function PostPage() {
 
                     <div className="post-meta-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-4">
                         <div className="p-3 lg:p-4 mt-3 lg:mt-5 border-cgray-2 bg-cgray-2 border bg-filter z-10 rounded-lg flex items-center gap-3 w-full sm:w-auto">
-                            <div className="author-avatar w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center font-bold text-base lg:text-lg shadow-md">
+                            <div className="author-avatar w-10 h-10 lg:w-12 lg:h-12 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center font-bold text-base lg:text-lg shadow-md">
                                 <UserPhoto
                                     withUsername={false}
                                     username={post.author}

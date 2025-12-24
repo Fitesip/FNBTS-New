@@ -231,7 +231,7 @@ export default function SettingsPage() {
                                 <label className="text-xs lg:text-sm text-cwhite-1/70 mb-2 lg:mb-3 block">Статус</label>
                                 {!statusChanging ? (
                                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 lg:gap-4">
-                                        <p className="text-base lg:text-lg flex-1 break-words">{user.status || "Нет статуса"}</p>
+                                        <p className="text-base lg:text-lg flex-1 wrap-break-word">{user.status || "Нет статуса"}</p>
                                         <button
                                             onClick={() => setStatusChanging(true)}
                                             className="px-3 lg:px-4 py-2 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter hover:scale-95 hover:bg-pink-1 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
@@ -267,79 +267,6 @@ export default function SettingsPage() {
                                         </div>
                                     </form>
                                 )}
-                            </div>
-                        </div>
-                    </div>
-                );
-
-            case 'appearance':
-                return (
-                    <div className={sectionClass}>
-                        <h2 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6 flex items-center gap-3">
-                            <svg className='w-4 h-4 lg:w-5 lg:h-5 text-cwhite-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                            </svg>
-                            Внешний вид
-                        </h2>
-
-                        <div className="space-y-4 lg:space-y-6">
-                            {/* Баннер */}
-                            <div className="space-y-3 lg:space-y-4">
-                                <h3 className="text-base lg:text-lg font-semibold">Баннер профиля</h3>
-                                <div className="relative w-full h-40 lg:w-320 lg:h-80 rounded-lg bg-cgray-2 overflow-hidden">
-                                    <UserBanner
-                                        userId={user.id}
-                                        width={1280}
-                                        height={320}
-                                        alt={'banner'}
-                                        className="w-full h-full object-cover rounded-lg"
-                                    />
-
-                                    <div className="absolute top-0 h-full w-full">
-                                        <UploadBannerForm
-                                            userId={user.id.toString()}
-                                            onPhotoUploaded={() => {}}
-                                        />
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            {/* Аватар */}
-                            <div className="space-y-3 lg:space-y-4">
-                                <h3 className="text-base lg:text-lg font-semibold">Аватар профиля</h3>
-                                <div className="flex flex-col items-center gap-4 lg:gap-6 p-3 lg:p-4 bg-cgray-1 rounded-lg transition-all duration-300 hover:shadow-lg">
-                                    <div className="relative flex-shrink-0">
-                                        <div className="relative z-10">
-                                            <UserPhoto
-                                                userId={user.id}
-                                                width={120}
-                                                height={120}
-                                                alt={'avatar'}
-                                                className="rounded-full size-30 lg:size-40"
-                                            />
-                                            <div className="absolute top-0 size-38 lg:size-38 -ml-4 -mt-4 lg:mt-1">
-                                                <UserFrame
-                                                    userId={user.id}
-                                                    width={200}
-                                                    alt={'frame'}
-                                                    className=""
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="absolute top-5 lg:top-5 z-100 left-20 lg:left-25">
-                                            <UploadPhotoForm
-                                                userId={user.id.toString()}
-                                                onPhotoUploaded={() => {}}
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="text-center lg:text-left w-full">
-                                        <p className="text-xs lg:text-sm text-cwhite-1/70">
-                                            Поддерживаются JPG, PNG, WEBP. Максимальный размер: 5MB. Рекомендуемое разрешение: 200x200.
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -477,13 +404,6 @@ export default function SettingsPage() {
                             </svg>
                                 Основная информация</div>}
 
-                            {activeSection === 'appearance' && <div className={`flex items-center gap-1`}>
-                                <svg className='w-4 h-4 lg:w-5 lg:h-5 text-cwhite-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                </svg>
-                                Внешний вид
-                            </div>}
-
                             {activeSection === 'security' && <div className={`flex items-center gap-1`}>
                                 <svg className='w-4 h-4 lg:w-5 lg:h-5 text-cwhite-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -519,19 +439,6 @@ export default function SettingsPage() {
                                     Основная информация
                                 </div>
                                 <div
-                                    onClick={() => changeSection('appearance')}
-                                    className={`w-full flex gap-1 items-center text-left px-3 py-2 rounded-lg transition-all duration-300 text-sm ${
-                                        activeSection === 'appearance'
-                                            ? 'bg-cgray-1 text-pink-1'
-                                            : 'hover:bg-cgray-1'
-                                    }`}
-                                >
-                                    <svg className='w-4 h-4 lg:w-5 lg:h-5 text-cwhite-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                    </svg>
-                                    Внешний вид
-                                </div>
-                                <div
                                     onClick={() => changeSection('security')}
                                     className={`w-full flex gap-1 items-center text-left px-3 py-2 rounded-lg transition-all duration-300 text-sm ${
                                         activeSection === 'security'
@@ -553,7 +460,7 @@ export default function SettingsPage() {
                 {/* Основной контент */}
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
                     {/* Боковая навигация для десктопа */}
-                    <div className="hidden lg:block lg:w-80 flex-shrink-0">
+                    <div className="hidden lg:block lg:w-80 shrink-0">
                         <div className="p-4 lg:p-6 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter shadow-xl">
                             <nav className="space-y-2">
                                 <div
@@ -565,15 +472,6 @@ export default function SettingsPage() {
                                     </svg>
                                     Основная информация
                                 </div>
-                                <button
-                                    onClick={() => changeSection('appearance')}
-                                    className={getButtonClass('appearance')}
-                                >
-                                    <svg className='w-4 h-4 lg:w-5 lg:h-5 text-cwhite-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                    </svg>
-                                    Внешний вид
-                                </button>
                                 <button
                                     onClick={() => changeSection('security')}
                                     className={getButtonClass('security')}
@@ -591,7 +489,7 @@ export default function SettingsPage() {
 
                     {/* Основные настройки */}
                     <div className="flex-1 min-h-96">
-                        <div className="p-4 lg:p-6 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter shadow-xl h-full transition-all duration-500">
+                        <div className="p-4 lg:p-6 text-cwhite-1 bg-cgray-2 border border-cgray-2 rounded-lg bg-filter shadow-xl h-max transition-all duration-500">
                             {renderActiveSection()}
                         </div>
                     </div>

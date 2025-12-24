@@ -11,6 +11,7 @@ export interface News {
     likeAuthors: string;
     dislikes: number;
     dislikeAuthors: string;
+    status: string;
 }
 
 export interface CreateNewsRequest {

@@ -3,6 +3,7 @@ import {NextRequest, NextResponse} from 'next/server';
 import {ApiResponse, CreateNewsRequest, VotesPosts} from '@/types/news';
 import pool from '@/lib/database';
 import {Resend} from "resend";
+import fs from "node:fs";
 
 // Типы для базы данных
 interface DatabaseResult {
@@ -186,11 +187,21 @@ async function sendVerificationEmail(email: string, username: string, verificati
     try {
         const resend = new Resend(process.env.RESEND_API_KEY);
 
+        const filepath = `public/fnbts.png`;
+        const attachment = fs.readFileSync(filepath).toString('base64');
+
         const { data, error } = await resend.emails.send({
             from: 'ФНБТС <fnbts@fnbts.ru>',
             to: email,
             subject: 'Новая новость - ФНБТС',
             html: generateVerificationEmailHtml(username, verificationLink),
+            attachments: [
+                {
+                    content: attachment,
+                    filename: 'logo.png',
+                    contentId: 'logo-image',
+                },
+            ],
         }) as unknown as ResendResponse;
 
         if (error) {
@@ -214,7 +225,7 @@ function generateVerificationEmailHtml(username: string, link: string): string {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Новая новость - ФНБТС</title>
+        <title>Новое голосование - ФНБТС</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -263,7 +274,7 @@ function generateVerificationEmailHtml(username: string, link: string): string {
     <body>
         <div class="container">
             <div class="logo">
-                <img src="/public/fnts.png" alt="FNBTS Logo" width="50" height="50">
+                <img src="cid:logo-image" alt="FNBTS Logo" width="50" height="50"/>
             </div>
             
             <hr class="divider">
